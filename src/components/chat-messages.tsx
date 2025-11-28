@@ -22,8 +22,8 @@ export function ChatMessages({ messages,handlePreview }: ChatMessagesProps) {
         {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full gap-4">
             <div className="text-center">
-              <h1 className="text-3xl font-bold text-foreground mb-2">Welcome to KPI Insights</h1>
-              <p className="text-muted-foreground">Start a conversation to get AI-powered responses</p>
+              <h1 className="text-3xl font-bold text-foreground mb-2">Welcome to Stratgen AI </h1>
+              <p className="text-muted-foreground">Start a conversation to get AI-powered insights</p>
             </div>
           </div>
         ) : (
