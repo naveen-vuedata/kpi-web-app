@@ -298,12 +298,12 @@ export function ChatPreview({
 
   return (
     <div
-      className={cn("p-4 overflow-y-auto h-full transition-all duration-100 ", {
+      className={cn("p-4 overflow-y-auto h-full transition-all relative duration-100 ", {
         "w-auto basis-1/2": enablePreview,
         "w-0": !enablePreview,
       })}
     >
-      {loading && <div>Loading...</div>}
+      {loading && enablePreview && <div className="absolute top-0 left-0 w-full h-full bg-black/30 flex items-center justify-center"><div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" /></div>}
       <div
         className="grid gap-4 auto-rows-fr"
         style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}
