@@ -1,18 +1,18 @@
 import { apiEndPoints } from "@/lib/apiEndpoints";
 import axios from "@/lib/axios";
-import { ChatHistory, Message } from "@/types";
+import { ChatHistory, MessageDetail } from "@/types";
 
 const endpoint = apiEndPoints.chat;
 
 export const getChatHistory = async (sessionId: string) => {
-  const url = `${endpoint.endpoint}/${sessionId}/${endpoint.history}`;
+  const url = `${endpoint.sessions}/${sessionId}`;
   const { data } = await axios.get<ChatHistory>(url);
   console.log({ data });
   return data;
 };
 export const sendMessage = async (sessionId: string, message: string) => {
   const url = `/${endpoint.endpoint}`;
-  const { data } = await axios.post<Message>(url, {
+  const { data } = await axios.post<MessageDetail>(url, {
     message,
     session_id: sessionId,
   });
